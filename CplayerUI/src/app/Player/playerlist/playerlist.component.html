@@ -1,0 +1,52 @@
+<div class="container" >
+    <div class="row">
+        <div class="col mt-5">
+            <h1 style="text-align:center;letter-spacing: 3px;color:rgb(193, 246, 33)"><b>List of all Players</b></h1>
+            <h1></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-5">
+            <mat-table [dataSource]="dataSource " class="mat-elevation-z8"  matSort >
+        
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color:rgb(193, 246, 33);color:black"> Name </mat-header-cell>
+                     <mat-cell *matCellDef="let element" > {{element.name}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="country">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color:rgb(193, 246, 33);color:black"> Country </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef style="background-color:rgb(193, 246, 33);color:black">Actions</mat-header-cell>
+                     <mat-cell *matCellDef="let row ; let element">
+                        <button  class="btn btn-warning" [ngStyle]="{'margin-right': '8px'}" (click)="getDetails(element.id)" > View Details </button>
+                          <button class="btn btn-danger"  (click)="addToFavorite(element)">Add to Favorites </button>
+<!--                          
+                          <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="addToFavorite(element)">
+                            <mat-icon>favorite</mat-icon>
+                          </button> -->
+                     </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="loading" >
+                    <mat-footer-cell *matFooterCellDef colspan="6">
+                        <mat-spinner [diameter]="40" [ngStyle]="{'margin-top': '20px','margin-bottom':'20px'}" *ngIf="showSpinner" > </mat-spinner>
+                     </mat-footer-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+                <mat-footer-row *matFooterRowDef="['loading']"  [ngClass]="{'hide':check=='0'}"> </mat-footer-row>
+    
+            </mat-table>
+            <mat-paginator #paginator [pageSizeOptions]="[5, 6, 7]" style="background-color:rgb(193, 246, 33);color:black">
+            </mat-paginator>
+        </div>
+    
+    
+    
+    </div> 
+
+
+
+
+  

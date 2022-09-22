@@ -1,0 +1,33 @@
+h1{
+    font-size:300%;
+    font-family: 'Tapestry', cursive;
+    position: absolute;
+    right: 8%;
+    top:50%
+    
+}
+
+div{
+    background-image:url("src/app/Player/home/27-275471_cricket-wallpaper-hd-wallpapers-download-free-images-cricket.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    color:white;
+
+}
+
+h2{
+    font-size:200%;
+    font-family: 'Seaweed Script', cursive;
+    position: absolute;
+    right: 20%;
+    top:60%;
+}
+div{
+   text-align: center;
+}
+
+.brandTitle{
+    font-size: 500%;
+    font-weight: 900;
+    font-family: 'Rock Salt', cursive;
+}

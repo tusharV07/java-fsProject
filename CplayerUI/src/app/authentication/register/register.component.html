@@ -1,0 +1,36 @@
+       <div class="one">
+        <div class="center">
+            <h1>Register </h1>
+            <form method="post" class="register-form" [formGroup]="myGroup" (ngSubmit)="registerUser()" #registerForm="ngForm" >
+              <div class="txt_field">
+                <input type="text" required formControlName="firstName" [(ngModel)]="newUser.firstName">
+                <span></span>
+                <label>First Name</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" required formControlName="userId" [(ngModel)]="newUser.lastName">
+              <span></span>
+              <label>Last Name</label>
+          </div>
+                <div class="txt_field">
+                    <input type="text" required formControlName="userId" [(ngModel)]="newUser.userId" >
+                    <span></span>
+                    <label>User Id</label>
+                </div>
+                <div class="txt_field">
+                  <input type="email" required formControlName="email" [(ngModel)]="newUser.email">
+                  <span></span>
+                  <label>Email</label>
+              </div>
+                <div class="txt_field">
+                    <input type="password" required formControlName="password" [(ngModel)]="newUser.password">
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <input type="submit" value="Sign up" [disabled]='registerForm.invalid'>
+                <div class="signup_link">
+                 Already a member?  <a routerLink="/login">Login</a>
+                </div>
+            </form>
+        </div>
+        </div>
