@@ -1,0 +1,25 @@
+.mat-row:nth-child(even){
+    background-color: #C2DFFF;
+}
+        
+.mat-row:nth-child(odd){
+    background-color: white;
+}
+.mat-row:hover {
+    background-color: #D3D3D3;
+  }
+  mat-header-cell, mat-cell,mat-footer-cell {
+    justify-content: center;
+  }
+  mat-header-cell
+  {
+      font-size:18px;
+  }
+  .hide
+  {
+      display: none;
+  }
+
+body{
+    background-color:rgb(146, 139, 139);
+}

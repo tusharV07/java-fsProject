@@ -1,0 +1,32 @@
+
+<div style="padding-left: 37%;margin-top: 15px;">
+<div class="search " >
+
+    <input class="form-control me-2" id="search" type="search" placeholder="Search player" [(ngModel)]=" searchName" aria-label="Search" required>
+   <button class="btn btn-outline" style="background-color:#8FBDD3;" type="submit" id="searchButton" (click)="onSearching()">Search</button>
+</div>
+</div>
+
+
+<div class="container" style="float:none"> 
+  <div class="row">
+    <div class ="col-md-auto " *ngFor="let d of Detailes">
+      <div class="card" style="width: 18rem;height:220px;background-color: wheat;
+      padding: 10px;;border:3px solid grey">
+        <div class="card-body">
+        <h2 class="card-subtitle mb-2 ">{{d.name}}</h2>
+        <h3>{{d.country}}</h3>
+        <div class="two">
+          <button type="submit" class="btn btn-primary btn-sm buttan"  (click)="getDetails(d.id)">View Details</button>
+          <button  type="submit" class="btn btn-dark btn-sm buttan" style="margin-left:10px;"  (click)="addToFavorite(d)">Add favorite</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div>
+  <br><br><br> <br> <br>
+  <br><br><br> <br> <br>
+  
+</div>

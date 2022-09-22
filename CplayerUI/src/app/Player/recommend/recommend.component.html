@@ -1,0 +1,52 @@
+<div class="container" >
+    <div class="row">
+        <div class="col mt-5">
+            <h1 style="text-align:center;letter-spacing: 3px;color:darkgray"><b></b></h1>
+            <h1></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-5">
+            <mat-table [dataSource]="dataSource " class="mat-elevation-z8"  matSort >
+
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color:#3A5BA0;color:white"> Name </mat-header-cell>
+                     <mat-cell *matCellDef="let element" > {{element.name}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="country">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color:#3A5BA0;color:white"> Country </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef style="background-color:#3A5BA0;color:white">Actions</mat-header-cell>
+                     <mat-cell *matCellDef="let row ; let element">
+                        <button  class="btn btn-primary btn-sm" [ngStyle]="{'margin-right': '8px'}" (click)="getDetails(element.playerId)" > View Details </button>
+                          <button class="btn btn-dark btn-sm"  (click)="addToFavorite(element)">Add to Favorites </button>
+                     </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="loading" >
+                    <mat-footer-cell *matFooterCellDef colspan="6">
+                        <mat-spinner [diameter]="40" [ngStyle]="{'margin-top': '20px','margin-bottom':'20px'}" *ngIf="showSpinner" > </mat-spinner>
+                     </mat-footer-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+                <mat-footer-row *matFooterRowDef="['loading']"  [ngClass]="{'hide':check=='0'}"> </mat-footer-row>
+
+            </mat-table>
+            
+        </div>
+
+             
+
+    </div>
+    <div>
+        <br><br><br> <br> <br>
+        <br><br><br> <br> <br>
+        
+    </div>
+    
+
+
+
+
